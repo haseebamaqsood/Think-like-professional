@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="canva">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Think Like Professional | AI Social Media Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="top">
+    <div class="brand"><span class="logo">T</span>Think Like Professional</div>
+    <div class="themes" role="group" aria-label="Color theme">Theme
+      <button data-theme="canva" style="background:linear-gradient(135deg,#7d2ae8,#00c4cc)" aria-label="Canva Purple"></button>
+      <button data-theme="sunset" style="background:linear-gradient(135deg,#f43f5e,#fb923c)" aria-label="Sunset"></button>
+      <button data-theme="ocean" style="background:linear-gradient(135deg,#2563eb,#06b6d4)" aria-label="Ocean"></button>
+      <button data-theme="forest" style="background:linear-gradient(135deg,#059669,#84cc16)" aria-label="Forest"></button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h1>Create a week of content in one click</h1>
+    <p>Describe your topic once. Get LinkedIn posts, Instagram captions, hashtags and a posting plan.</p>
+  </section>
+
+  <main class="layout">
+    <aside class="panel brief">
+      <h2>Your brief</h2>
+      <label for="topic">Topic</label>
+      <textarea id="topic" rows="3" placeholder="Launching our new eco-friendly water bottle"></textarea>
+      <label for="audience">Audience</label>
+      <input id="audience" placeholder="Young professionals who care about sustainability">
+      <label for="tone">Tone</label>
+      <select id="tone"><option>Professional</option><option>Friendly</option><option>Witty</option><option>Inspirational</option><option>Bold</option></select>
+      <button class="btn" id="goGenerate">Generate content</button>
+      <button class="btn ghost" id="goCalendar">Build weekly calendar</button>
+      <details class="ai">
+        <summary>AI connection (optional)</summary>
+        <label for="key">OpenRouter API key</label>
+        <input id="key" type="password" placeholder="sk-or-..." autocomplete="off">
+        <label for="model">Model</label>
+        <input id="model" placeholder="openai/gpt-4o-mini">
+      </details>
+      <span class="mode" id="mode"></span>
+    </aside>
+
+    <section class="work">
+      <nav class="tabs" role="tablist">
+        <button class="tab active" data-tab="generate">✍️ Posts</button>
+        <button class="tab" data-tab="repurpose">🔁 Repurpose</button>
+        <button class="tab" data-tab="calendar">📅 Calendar</button>
+      </nav>
+      <div id="generate" class="pane active"><div class="empty">Fill in your brief and select Generate content.</div></div>
+      <div id="repurpose" class="pane">
+        <div class="panel">
+          <label for="post">Paste a finished post</label>
+          <textarea id="post" rows="6" placeholder="Paste your LinkedIn post or article here"></textarea>
+          <label for="target">Rewrite for</label>
+          <select id="target"><option>Instagram caption</option><option>X (Twitter) post</option><option>Facebook post</option><option>Short video script</option></select>
+          <button class="btn" id="goRepurpose">Repurpose post</button>
+        </div>
+        <div id="repurposeOut" style="margin-top:16px"></div>
+      </div>
+      <div id="calendar" class="pane"><div class="empty">Select Build weekly calendar to get a 7-day plan.</div></div>
+    </section>
+  </main>
+  <div id="toast" class="toast" role="status"></div>
+  <script src="js/app.js"></script>
+</body>
+</html>
