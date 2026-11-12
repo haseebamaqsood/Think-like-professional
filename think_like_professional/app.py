@@ -21,7 +21,6 @@ def home():
 def css(name):
     return send_from_directory(os.path.join(BASE, "css"), name)
 
-
 @app.route("/js/<path:name>")
 def js(name):
     return send_from_directory(os.path.join(BASE, "js"), name)
